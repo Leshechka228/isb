@@ -1,6 +1,7 @@
 from work_with_files import read_txt_file, write_txt_file, load_json_file
 from typing import Dict
 
+
 def encrypt_text_with_key(text_file_path: str, dict_file_path: str, output_file_path: str) -> None:
     """
     Encrypt the text from the input file using the dictionary file and save the encrypted text to the output file.

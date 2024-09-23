@@ -1,6 +1,9 @@
-from work_with_files import load_json_file, save_json_file
 import os
+
 from typing import Dict
+
+from work_with_files import load_json_file, save_json_file
+
 
 def merge_key(json_path1: str, json_path2: str, output_json_path: str) -> None:
     """

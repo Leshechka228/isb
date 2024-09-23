@@ -1,6 +1,7 @@
 from work_with_files import read_txt_file, save_json_file
 from typing import Dict
 
+
 def frequency_analysis(path: str, probabilities: str) -> None:
     """
     Perform frequency analysis of symbols in the text file located at the given path

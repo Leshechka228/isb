@@ -1,5 +1,6 @@
 import json
 
+
 def read_txt_file(file_path: str) -> str:
     """
     Read the content of a text file.
@@ -13,6 +14,7 @@ def read_txt_file(file_path: str) -> str:
         return content
     except Exception as e:
         return f"Error reading file: {str(e)}"
+
 
 def write_txt_file(file_path: str, content: str) -> str:
     """
@@ -29,6 +31,7 @@ def write_txt_file(file_path: str, content: str) -> str:
     except Exception as e:
         return f"Error writing file: {str(e)}"
 
+
 def load_json_file(file_path: str) -> dict:
     """
     Load JSON data from a JSON file.
@@ -42,6 +45,7 @@ def load_json_file(file_path: str) -> dict:
         return data
     except Exception as e:
         return f"Error loading JSON file: {str(e)}"
+
 
 def save_json_file(file_path: str, data: dict) -> str:
     """
