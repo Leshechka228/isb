@@ -2,7 +2,6 @@ import logging
 import math
 import mpmath
 
-from constants import MAX_LENGTH_BLOCK, PI, SEQUENCE_PATH, TEST_RESULTS
 from file_work import json_reader, txt_writer
 
 logging.basicConfig(level=logging.DEBUG, filemode='w')
@@ -56,6 +55,10 @@ def longest_sequence_in_block_test(sequence: str) -> float:
     :param sequence: str binary sequence
     :return: float p-value of the test
     """
+    constants = json_reader("sequence.json")
+    MAX_LENGTH_BLOCK = constants["MAX_LENGTH_BLOCK"]
+    PI = constants["PI"]
+    
     try:
 
         blocks = [sequence[i:i + MAX_LENGTH_BLOCK] for i in range(0, len(sequence), MAX_LENGTH_BLOCK)]
@@ -80,9 +83,10 @@ def longest_sequence_in_block_test(sequence: str) -> float:
 
 
 if __name__ == "__main__":
-    sequences = json_reader(SEQUENCE_PATH)
+    sequences = json_reader("sequence.json")
     test_cpp = sequences["cpp"]
     test_java = sequences["java"]
+    TEST_RESULTS = sequences["TEST_RESULTS"]
 
     txt_writer(TEST_RESULTS, f'C++\n\nfrequency_bitwise_test: {frequency_bitwise_test(test_cpp)}\n'
                              f'consecutive_bits_test: {consecutive_bits_test(test_cpp)}\n'
