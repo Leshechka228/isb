@@ -9,6 +9,7 @@ if __name__ == "__main__":
     
     constants = load_json_file('constants.json')
 
+    alphabet = constants['alphabet']
     shift = constants['shift']
     key1 = constants['key1']
     text1 = constants['text1']
@@ -19,7 +20,7 @@ if __name__ == "__main__":
     probabilities = constants['probabilities']
     ru = constants['ru']
     
-    create_caesar_key(shift, key1)
+    create_caesar_key(shift, key1, alphabet)
     encrypt_text_with_key(text1, key1, encrypted_text)
     frequency_analysis(cipher, probabilities)
     merge_key(ru, probabilities, key2)

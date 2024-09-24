@@ -1,8 +1,8 @@
-from work_with_files import save_json_file, load_json_file
+from work_with_files import save_json_file
 from typing import Dict
 
 
-def create_caesar_key(shift: int, path: str) -> None:
+def create_caesar_key(shift: int, path: str, alphabet: str) -> None:
     """
     Creates a Caesar cipher key based on the specified shift value and saves it in JSON format.
 
@@ -10,8 +10,6 @@ def create_caesar_key(shift: int, path: str) -> None:
     :param path: The file path to save the JSON file.
     :return: None
     """
-    constants = load_json_file('constants.json')
-    alphabet = constants["alphabet"]
 
     caesar_key: Dict[str, str] = {}
 
